@@ -16,12 +16,12 @@ public class QuickUnion implements ConnectivityAlgorithm {
         return p;
     }
     @Override
-    public boolean connected(int p,int q){
+    public boolean connected(int p,int q) throws IndexOutOfBoundsException{
         return root(p)==root(q);
     }
     @Override
     public int find(int p){
-        return id[p];
+        return root(p);
     }
     public int length(){
         return N;
@@ -34,5 +34,10 @@ public class QuickUnion implements ConnectivityAlgorithm {
         id=new int[this.N];
         for(int i=0;i<this.N;i++)id[i]=i;
     }
+	@Override
+	public int get(int p) throws IndexOutOfBoundsException{
+		
+		return id[p];
+	}
 
 }

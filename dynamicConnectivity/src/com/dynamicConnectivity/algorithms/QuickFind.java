@@ -32,4 +32,8 @@ public class QuickFind implements ConnectivityAlgorithm{
         for(int i=0;i<N;i++)id[i]=i;
         
     }
+	@Override
+	public int get(int p) {
+		return id[p];
+	}
 }

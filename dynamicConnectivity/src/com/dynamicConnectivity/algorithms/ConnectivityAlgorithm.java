@@ -6,5 +6,6 @@ public interface ConnectivityAlgorithm {
     public void union(int p,int q);
     public int find(int p);
     public int length();
+    public int get(int p);
 
 }
