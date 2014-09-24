@@ -3,10 +3,12 @@ package com.dynamicConnectivity.algorithms;
 public class WeightedQuickUnion extends QuickUnion implements
         ConnectivityAlgorithm {
     private int[] sz = null;
+    private int count=0;
 
     @Override
     public void Init(int N) {
         super.Init(N);
+        count=N;
         sz = new int[N];
         for (int i = 0; i < N; i++)
             sz[i] = 1;
@@ -23,5 +25,9 @@ public class WeightedQuickUnion extends QuickUnion implements
             id[rootq] = rootp;
             sz[rootp] += sz[rootq];
         }
+        count--;
+    }
+    public int count(){
+    	return this.count;
     }
 }
